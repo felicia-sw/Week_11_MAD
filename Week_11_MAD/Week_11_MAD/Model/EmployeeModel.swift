@@ -5,7 +5,6 @@
 //  Created by Felicia Sword on 07/05/26.
 //
 
-// Model/EmployeeModel.swift
 import SwiftData
 import Foundation
 
@@ -15,7 +14,7 @@ class Employee {
     var position: String
     var company: Company?
 
-    // ← No @Relationship here — Project.personInCharge already owns this side
+    @Relationship(deleteRule: .nullify, inverse: \Project.personInCharge)
     var projects: [Project] = []
 
     init(name: String, position: String) {

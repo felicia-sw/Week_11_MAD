@@ -17,7 +17,7 @@ class Project {
     var endDate: Date
     var company: Company?
 
-    @Relationship(deleteRule: .nullify)
+//    @Relationship(deleteRule: .nullify)
     var personInCharge: Employee?
 
     var isActive: Bool { endDate > Date.now }
